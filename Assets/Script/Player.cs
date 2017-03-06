@@ -35,13 +35,12 @@ public class Player : MonoBehaviour {
 
         Vector3 accelerationRaw = Input.acceleration;
         Vector3 acceleration = FixAcceleration (accelerationRaw);
-        Vector3 movement = new Vector3(acceleration.x, 0.0f, acceleration.y);
 
-        Quaternion rotX = Quaternion.AngleAxis(movement.x * rotationSpeed, Vector3.right);
-        Quaternion rotY = Quaternion.AngleAxis(movement.y * rotationSpeed, Vector3.forward);
+        Quaternion rotX = Quaternion.AngleAxis(acceleration.y * rotationSpeed, Vector3.right);
+        Quaternion rotZ = Quaternion.AngleAxis(acceleration.x * -rotationSpeed, Vector3.forward);
 
         transform.rotation = transform.rotation * rotX;
-        transform.rotation = transform.rotation * rotY;
+        transform.rotation = transform.rotation * rotZ;
 
 
     }
