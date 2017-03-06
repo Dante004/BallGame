@@ -6,7 +6,7 @@ public class KillZone : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.position = new Vector3(0, 10, 0);
+        other.transform.position = new Vector3(0, 10, 0); // zmiana pozycji obiektu na domyślną
     }
 
 }
