@@ -46,7 +46,7 @@ public class Player : MonoBehaviour {
         //zmiana obrotu
         transform.rotation = transform.rotation * rotX;
         transform.rotation = transform.rotation * rotZ;
-
-
+        transform.rotation = new Quaternion(transform.rotation.x, 0, transform.rotation.z,1);
+            
     }
 }
